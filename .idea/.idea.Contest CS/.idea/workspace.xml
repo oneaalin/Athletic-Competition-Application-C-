@@ -40,6 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Project.Contest CS">
@@ -94,6 +95,7 @@
       <workItem from="1615316449184" duration="2068000" />
       <workItem from="1615322094414" duration="158000" />
       <workItem from="1615401642654" duration="136000" />
+      <workItem from="1615401835945" duration="296000" />
     </task>
     <servers />
   </component>
