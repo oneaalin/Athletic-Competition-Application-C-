@@ -28,6 +28,12 @@
       <option value="$PROJECT_DIR$/Contest/repository/IChildRepository.cs" />
       <option value="$PROJECT_DIR$/Contest/repository/IEntriesRepository.cs" />
       <option value="$PROJECT_DIR$/Contest/repository/IEmployeesRepository.cs" />
+      <option value="$PROJECT_DIR$/model/Tuple.cs" />
+      <option value="$PROJECT_DIR$/model/Entry.cs" />
+      <option value="$PROJECT_DIR$/model/Entity.cs" />
+      <option value="$PROJECT_DIR$/model/Employee.cs" />
+      <option value="$PROJECT_DIR$/model/Child.cs" />
+      <option value="$PROJECT_DIR$/model/Challenge.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1pTDvkahYphwI0k0ULp7Tm8ztuM" />
@@ -95,7 +101,7 @@
       <workItem from="1615316449184" duration="2068000" />
       <workItem from="1615322094414" duration="158000" />
       <workItem from="1615401642654" duration="136000" />
-      <workItem from="1615401835945" duration="296000" />
+      <workItem from="1615401835945" duration="887000" />
     </task>
     <servers />
   </component>
