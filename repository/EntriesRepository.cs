@@ -12,10 +12,10 @@ namespace Contest_CS.repository
         
         private static readonly ILog log = LogManager.GetLogger("EntriesRepository");
 
-        private ChildRepository childRepo;
-        private ChallengeRepository challengeRepo;
+        private IChildRepository childRepo;
+        private IChallengeRepository challengeRepo;
         
-        public EntriesRepository(ChildRepository childRepo , ChallengeRepository challengeRepo)
+        public EntriesRepository(IChildRepository childRepo , IChallengeRepository challengeRepo)
         {
             log.Info("Creating Entries Repository");
             this.childRepo = childRepo;
@@ -34,8 +34,8 @@ namespace Contest_CS.repository
                 paramCId.ParameterName = "@cid";
                 paramCId.Value = cid;
                 comm.Parameters.Add(paramCId);
-                
-                int counter = (Int32) comm.ExecuteScalar();
+                long long_counter = (Int64) comm.ExecuteScalar();
+                int counter = (int) long_counter;
                 log.InfoFormat("Exiting Count with value {0}",counter);
                 return counter;
             }
@@ -53,8 +53,8 @@ namespace Contest_CS.repository
                 paramKId.ParameterName = "@kid";
                 paramKId.Value = kid;
                 comm.Parameters.Add(paramKId);
-                
-                int counter = (Int32) comm.ExecuteScalar();
+                long long_counter = (Int64) comm.ExecuteScalar();
+                int counter = (int)long_counter;
                 log.InfoFormat("Exiting Count with value {0}",counter);
                 return counter;
             }

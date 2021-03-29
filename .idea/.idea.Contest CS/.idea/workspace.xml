@@ -5,18 +5,21 @@
     <projectFile>Contest CS.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aadf3dc4-7809-4d3c-aae8-19adc68c184f" name="Default Changelist" comment=".">
+    <list default="true" id="aadf3dc4-7809-4d3c-aae8-19adc68c184f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Contest CS/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Contest CS/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Contest CS/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Contest CS/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Contest CS/.idea/dataSources/ca2100e4-7ee7-47d9-93ca-22434c606e21.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Contest CS/.idea/dataSources/ca2100e4-7ee7-47d9-93ca-22434c606e21.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Contest CS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Contest CS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/App.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConnectionUtils/SqliteConnectionFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConnectionUtils/SqliteConnectionFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Contest CS.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Contest CS.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contest CS.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Contest CS.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form1.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Challenge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/model/Challenge.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Child.cs" beforeDir="false" afterPath="$PROJECT_DIR$/model/Child.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Employee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/model/Employee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Entry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/model/Entry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Tuple.cs" beforeDir="false" afterPath="$PROJECT_DIR$/model/Tuple.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/ChallengeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/repository/ChallengeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/ChildRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/repository/ChildRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/EmployeesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/repository/EmployeesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/EntriesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/repository/EntriesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/IChildRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/repository/IChildRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +40,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3BC7FD4B-CD3A-439E-9A5D-19ABBF25CA72/8/SqliteConnection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3BC7FD4B-CD3A-439E-9A5D-19ABBF25CA72/C/SqliteException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B28F550-0D54-4E01-9E30-DCA09FAB36D7/0e/eef8bb0c/Application.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3BC7FD4B-CD3A-439E-9A5D-19ABBF25CA72/A/SqliteDataReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C2A08500-0E32-4638-B307-E9A7DA0753F9/83/b9a1bcc9/DbConnectionStringBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3B28F550-0D54-4E01-9E30-DCA09FAB36D7/12/14521e73/Control.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -58,18 +63,31 @@
       <option value="$PROJECT_DIR$/ConnectionUtils/Class1.cs" />
       <option value="$PROJECT_DIR$/ConnectionUtils/ConnectionFactory.cs" />
       <option value="$PROJECT_DIR$/model/Child.cs" />
-      <option value="$PROJECT_DIR$/model/Challenge.cs" />
       <option value="$PROJECT_DIR$/model/Employee.cs" />
       <option value="$PROJECT_DIR$/model/Entry.cs" />
       <option value="$PROJECT_DIR$/model/Tuple.cs" />
-      <option value="$PROJECT_DIR$/repository/EntriesRepository.cs" />
       <option value="$PROJECT_DIR$/App.config" />
-      <option value="$PROJECT_DIR$/repository/ChildRepository.cs" />
-      <option value="$PROJECT_DIR$/repository/ChallengeRepository.cs" />
-      <option value="$PROJECT_DIR$/repository/EmployeesRepository.cs" />
-      <option value="$PROJECT_DIR$/Program.cs" />
       <option value="$PROJECT_DIR$/repository/DBUtils.cs" />
+      <option value="$PROJECT_DIR$/Form1.cs" />
+      <option value="$PROJECT_DIR$/Form1.Designer.cs" />
+      <option value="$PROJECT_DIR$/Login.Designer.cs" />
+      <option value="$PROJECT_DIR$/model/ChildDTO.cs" />
+      <option value="$PROJECT_DIR$/model/Challenge.cs" />
+      <option value="$PROJECT_DIR$/validator/ValidationException.cs" />
+      <option value="$PROJECT_DIR$/repository/IChildRepository.cs" />
+      <option value="$PROJECT_DIR$/repository/ChildRepository.cs" />
       <option value="$PROJECT_DIR$/ConnectionUtils/SqliteConnectionFactory.cs" />
+      <option value="$PROJECT_DIR$/Register.cs" />
+      <option value="$PROJECT_DIR$/Login.cs" />
+      <option value="$PROJECT_DIR$/repository/EmployeesRepository.cs" />
+      <option value="$PROJECT_DIR$/repository/EntriesRepository.cs" />
+      <option value="$PROJECT_DIR$/Program.cs" />
+      <option value="$PROJECT_DIR$/model/ChallengeDTO.cs" />
+      <option value="$PROJECT_DIR$/repository/ChallengeRepository.cs" />
+      <option value="$PROJECT_DIR$/Main.Designer.cs" />
+      <option value="$PROJECT_DIR$/ChallengeChildrenData.cs" />
+      <option value="$PROJECT_DIR$/service/Service.cs" />
+      <option value="$PROJECT_DIR$/Main.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1pTDvkahYphwI0k0ULp7Tm8ztuM" />
@@ -86,7 +104,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor.code.editing" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Project.Contest CS">
@@ -148,6 +166,23 @@
       <workItem from="1616050006803" duration="7941000" />
       <workItem from="1616162399878" duration="937000" />
       <workItem from="1616323834196" duration="590000" />
+      <workItem from="1616412213098" duration="354000" />
+      <workItem from="1616431698825" duration="251000" />
+      <workItem from="1616529837352" duration="746000" />
+      <workItem from="1616530690729" duration="1247000" />
+      <workItem from="1616539591206" duration="3948000" />
+      <workItem from="1616584982678" duration="7474000" />
+      <workItem from="1616597316339" duration="2246000" />
+      <workItem from="1616602572097" duration="13269000" />
+      <workItem from="1616623689276" duration="4583000" />
+      <workItem from="1616632062542" duration="230000" />
+      <workItem from="1616655789632" duration="7586000" />
+      <workItem from="1616663679535" duration="2387000" />
+      <workItem from="1616673549637" duration="356000" />
+      <workItem from="1617015353049" duration="14701000" />
+      <workItem from="1617034768494" duration="334000" />
+      <workItem from="1617035286447" duration="53000" />
+      <workItem from="1617036112453" duration="5534000" />
     </task>
     <servers />
   </component>
@@ -172,5 +207,17 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="." />
     <option name="LAST_COMMIT_MESSAGE" value="." />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="DotNetProject">
+        <watch expression="new System.Collections.Generic.Mscorlib_CollectionDebugView&lt;Contest.model.ChallengeDTO&gt;(challenges).Items[0]" />
+        <watch expression="challenges" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

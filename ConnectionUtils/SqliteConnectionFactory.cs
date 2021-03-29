@@ -15,9 +15,9 @@ namespace ConnectionUtils
             
 
             // Windows Sqlite Connection, fisierul .db ar trebuie sa fie in directorul debug/bin
-            //String connectionString = "Data Source=contest.db";
-            //return new SqliteConnection(connectionString);
-            var url = ConfigurationManager.ConnectionStrings["Contest"].ConnectionString;
+            String connectionString = "Data Source=contest.db";
+            return new SqliteConnection(connectionString);
+            /*var url = ConfigurationManager.ConnectionStrings["Contest"].ConnectionString;
             SqliteConnection connection = null;
             try
             {
@@ -28,7 +28,7 @@ namespace ConnectionUtils
                 log.Error(e);
             }
 
-            return connection;
+            return connection;*/
         }
     }
 }

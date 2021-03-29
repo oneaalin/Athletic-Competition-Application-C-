@@ -15,7 +15,44 @@ namespace Contest_CS.repository
         {
             log.Info("Creating Child Repository");
         }
-        
+
+        public Child FindByProperties(string name, int age)
+        {
+            log.InfoFormat("Entering FindByProperties with name {0} , age {1}", name,age);
+            IDbConnection con = DBUtils.getConnection();
+
+            using (var comm = con.CreateCommand())
+            {
+                comm.CommandText = "select id , name, age from Child where name = @name and age = @age";
+                
+                IDbDataParameter paramName = comm.CreateParameter();
+                paramName.ParameterName = "@name";
+                paramName.Value = name;
+                comm.Parameters.Add(paramName);
+
+                IDbDataParameter paramAge = comm.CreateParameter();
+                paramAge.ParameterName = "@age";
+                paramAge.Value = age;
+                comm.Parameters.Add(paramAge);
+
+                using (var dataR = comm.ExecuteReader())
+                {
+                    if (dataR.Read())
+                    {
+                        long id = dataR.GetInt64(0);
+                        String the_name = dataR.GetString(1);
+                        int the_age = dataR.GetInt32(2);
+                        Child child = new Child(the_name, the_age);
+                        child.Id = id;
+                        log.InfoFormat("Exiting FindByProperties with value {0}", child);
+                        return child;
+                    }
+                }
+            }
+            log.InfoFormat("Exiting FindByProperties with value {0}", null);
+            return null;
+        }
+
         public Child FindOne(long id)
         {
             log.InfoFormat("Entering FindOne with value {0}", id);

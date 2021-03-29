@@ -24,7 +24,7 @@ namespace Contest_CS.repository
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "select id , minium_age, maximum_age , name from Employees where username = @username";
+                comm.CommandText = "select id , username, password from Employees where username = @username";
                 
                 IDbDataParameter paramUsername = comm.CreateParameter();
                 paramUsername.ParameterName = "@username";
@@ -113,7 +113,7 @@ namespace Contest_CS.repository
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "insert into Employees(username,password) values ( @username, @password)";
+                comm.CommandText = "insert into Employees (username,password) values ( @username, @password)";
 
                 var paramUsername = comm.CreateParameter();
                 paramUsername.ParameterName = "@username";

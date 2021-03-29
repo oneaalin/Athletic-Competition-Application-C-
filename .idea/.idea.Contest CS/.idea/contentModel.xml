@@ -8,6 +8,9 @@
     <e p="D:\MPP Projects\Contest CS" t="IncludeRecursive">
       <e p="App.config" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
+      <e p="ChallengeChildrenData.cs" t="Include" />
+      <e p="ChallengeChildrenData.Designer.cs" t="Include" />
+      <e p="ChallengeChildrenData.resx" t="Include" />
       <e p="ConnectionUtils" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="ConnectionFactory.cs" t="Include" />
@@ -21,11 +24,21 @@
       </e>
       <e p="Contest CS.csproj" t="IncludeRecursive" />
       <e p="Contest CS.sln" t="IncludeFlat" />
-      <e p="Form1.cs" t="Include" />
-      <e p="Form1.Designer.cs" t="Include" />
+      <e p="images" t="Include">
+        <e p="login_image.jpg" t="Include" />
+        <e p="register_image.jpg" t="Include" />
+      </e>
+      <e p="Login.cs" t="Include" />
+      <e p="Login.Designer.cs" t="Include" />
+      <e p="Login.resx" t="Include" />
+      <e p="Main.cs" t="Include" />
+      <e p="Main.Designer.cs" t="Include" />
+      <e p="Main.resx" t="Include" />
       <e p="model" t="Include">
         <e p="Challenge.cs" t="Include" />
+        <e p="ChallengeDTO.cs" t="Include" />
         <e p="Child.cs" t="Include" />
+        <e p="ChildDTO.cs" t="Include" />
         <e p="Employee.cs" t="Include" />
         <e p="Entity.cs" t="Include" />
         <e p="Entry.cs" t="Include" />
@@ -60,6 +73,9 @@
         <e p="Settings.Designer.cs" t="Include" />
         <e p="Settings.settings" t="Include" />
       </e>
+      <e p="Register.cs" t="Include" />
+      <e p="Register.Designer.cs" t="Include" />
+      <e p="Register.resx" t="Include" />
       <e p="repository" t="Include">
         <e p="ChallengeRepository.cs" t="Include" />
         <e p="ChildRepository.cs" t="Include" />
@@ -71,6 +87,12 @@
         <e p="IEmployeesRepository.cs" t="Include" />
         <e p="IEntriesRepository.cs" t="Include" />
         <e p="IRepository.cs" t="Include" />
+      </e>
+      <e p="service" t="Include">
+        <e p="Service.cs" t="Include" />
+      </e>
+      <e p="validator" t="Include">
+        <e p="ValidationException.cs" t="Include" />
       </e>
     </e>
   </component>

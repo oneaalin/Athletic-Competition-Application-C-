@@ -24,7 +24,7 @@ namespace Contest_CS.repository
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "select id , minium_age, maximum_age , name from Challenge where minimum_age = @minimum_age and maximum_age = @maximum_age and name = @name";
+                comm.CommandText = "select id , minimum_age, maximum_age , name from Challenge where minimum_age = @minimum_age and maximum_age = @maximum_age and name = @name";
                 
                 IDbDataParameter paramMinimumAge = comm.CreateParameter();
                 paramMinimumAge.ParameterName = "@minimum_age";
@@ -67,7 +67,7 @@ namespace Contest_CS.repository
 
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "select id , minium_age, maximum_age , name from Challenge where id=@id";
+                comm.CommandText = "select id , minimum_age, maximum_age , name from Challenge where id=@id";
                 IDbDataParameter paramId = comm.CreateParameter();
                 paramId.ParameterName = "@id";
                 paramId.Value = id;
@@ -99,7 +99,7 @@ namespace Contest_CS.repository
             IList<Challenge> challenges = new List<Challenge>();
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "select id ,maximum_age , minimum_age , name from Challenge";
+                comm.CommandText = "select id ,minimum_age , maximum_age , name from Challenge";
 
                 using (var dataR = comm.ExecuteReader())
                 {

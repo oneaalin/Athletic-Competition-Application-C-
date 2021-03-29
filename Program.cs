@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Contest.model;
 using Contest.repository;
 using Contest_CS.repository;
+using Contest_CS.service;
 
 namespace Contest_CS
 {
@@ -20,19 +21,29 @@ namespace Contest_CS
     {
 
 
-      IChildRepository childRepo = new ChildRepository();
-      IChallengeRepository challengeRepo = new ChallengeRepository();
+      //IChildRepository childRepo = new ChildRepository();
+      //IChallengeRepository challengeRepo = new ChallengeRepository();
       //childRepo.Save(new Child("Alin", 10));
-      childRepo.Save(new Child("Andrei", 12));
+      //childRepo.Save(new Child("Andrei", 12));
       //childRepo.Delete(2);
-      foreach(var element in childRepo.FindAll())
+      /*foreach(var element in childRepo.FindAll())
       {
         Trace.WriteLine(element);
-      }
+      }*/
 
-      //Application.EnableVisualStyles();
-      //Application.SetCompatibleTextRenderingDefault(false);
-      //Application.Run(new Form1());
+      IChildRepository childRepo = new ChildRepository();
+      IChallengeRepository challengeRepo = new ChallengeRepository();
+      IEmployeesRepository employeesRepo = new EmployeesRepository();
+      IEntriesRepository entriesRepo = new EntriesRepository(childRepo, challengeRepo);
+
+      Service service = new Service(childRepo, challengeRepo, employeesRepo, entriesRepo);
+      
+      
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
+      Application.Run(new Login(service));
+      
+      
     }
   }
 }
