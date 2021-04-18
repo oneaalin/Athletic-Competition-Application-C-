@@ -1,23 +1,25 @@
 using System;
 using System.Windows.Forms;
-using Contest.model;
-using Contest_CS.service;
+using Client;
+using Models;
+using Server;
+using Services;
 
-namespace Contest_CS
+namespace Client
 {
     public partial class Login : Form
     {
-        private Service service;
-        public Login(Service service)
+        private ClientController ctrl;
+        public Login(ClientController ctrl)
         {
-            this.service = service;
+            this.ctrl = ctrl;
             InitializeComponent();
         }
         
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            Register registerForm = new Register(this,service);
+            Register registerForm = new Register(this,ctrl);
             this.Hide();
             registerForm.Show();
             //this.Close();
@@ -27,17 +29,25 @@ namespace Contest_CS
         {
             String usename = UsernameBox.Text;
             String password = PasswordBox.Text;
-            Employee employee = service.LoginEmployee(usename, password);
-            if (employee != null)
+            try
             {
-                Main mainForm = new Main(this, service, employee);
-                this.Hide();
-                mainForm.Show();
+                Employee employee = ctrl.Login(usename, password);
+                if (employee != null)
+                {
+                    Main mainForm = new Main(this, ctrl);
+                    this.Hide();
+                    mainForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("The username and/or password are not matching ! ");
+                }
             }
-            else
+            catch (ValidationException)
             {
-                MessageBox.Show("The username and/or password are not matching ! ");
+                MessageBox.Show("The user is already logged in");
             }
+            
         }
     }
 }

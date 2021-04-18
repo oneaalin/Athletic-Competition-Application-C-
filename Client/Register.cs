@@ -1,21 +1,21 @@
 using System;
-using System.Data.SqlClient;
 using System.Windows.Forms;
-using Contest.model;
-using Contest_CS.service;
-using Contest_CS.validator;
+using Client;
 using Microsoft.Data.Sqlite;
+using Models;
+using Server;
+using Services;
 
-namespace Contest_CS
+namespace Client
 {
     public partial class Register : Form
     {
         private Login loginForm;
-        private Service service;
-        public Register(Login loginForm,Service service)
+        private ClientController ctrl;
+        public Register(Login loginForm,ClientController ctrl)
         {
             this.loginForm = loginForm;
-            this.service = service;
+            this.ctrl = ctrl;
             InitializeComponent();
         }
 
@@ -25,7 +25,7 @@ namespace Contest_CS
             String password = PasswordBox.Text;
             try
             {
-                Employee employee = service.RegisterEmployee(username, password);
+                Employee employee = ctrl.RegisterEmployee(username, password);
                 if (employee == null)
                 {
                     this.Hide();

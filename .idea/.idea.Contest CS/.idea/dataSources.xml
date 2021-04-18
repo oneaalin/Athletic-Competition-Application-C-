@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="contest.db" uuid="ca2100e4-7ee7-47d9-93ca-22434c606e21">
+    <data-source source="LOCAL" name="contest.db" uuid="485e31f0-c395-44f5-9380-5c88ba0a89b8">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\MPP Projects\Contest CS\bin\Debug\contest.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/bin/Debug/contest.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

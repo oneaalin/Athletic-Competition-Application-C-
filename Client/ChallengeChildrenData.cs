@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Contest.model;
+using Models;
 
-namespace Contest_CS
+namespace Client
 {
     public partial class ChallengeChildrenData : Form
     {

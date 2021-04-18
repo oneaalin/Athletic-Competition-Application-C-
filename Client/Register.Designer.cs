@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Contest_CS
+namespace Client
 {
     partial class Register
     {

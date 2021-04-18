@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Contest_CS
+namespace Client
 {
     partial class Main
     {
@@ -398,6 +398,7 @@ namespace Contest_CS
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChatWindow_FormClosing);
         }
 
         private System.Windows.Forms.Button RegisterButton;

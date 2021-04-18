@@ -54,37 +54,37 @@ namespace Contest_CS.service
             }
         }
         return null;
-    }
+        }
 
-    public Employee RegisterEmployee(String username,String password){
+        public Employee RegisterEmployee(String username,String password){
         String passwordSalt = MD5Hash(password);
         Employee employee = employeesRepo.Save(new Employee(username,passwordSalt));
         if(employee == null){
             return null;
         }
         return employee;
-    }
+        }
 
-    public List<ChallengeDTO> GetAllChallenges()
-    {
+        public List<ChallengeDTO> GetAllChallenges()
+        {
         List<Challenge> challenges = challengeRepo.FindAll().OrderBy((a) => a.Name).ToList();
         List<ChallengeDTO> challengesDTO = new List<ChallengeDTO>();
         foreach(Challenge challenge in challenges){
             challengesDTO.Add(new ChallengeDTO(challenge.MinimumAge,challenge.MaximumAge,challenge.Name,entriesRepo.FindChildNumber(challenge.Id)));
         }
         return challengesDTO;
-    }
+        }
 
-    public List<ChildDTO> GetAllChildren(){
+        public List<ChildDTO> GetAllChildren(){
         IEnumerable<Child> children = childRepo.FindAll();
         List<ChildDTO> childrenDTO = new List<ChildDTO>();
         foreach(Child child in children){
             childrenDTO.Add(new ChildDTO(child.Name,child.Age,entriesRepo.FindChallengeNumber(child.Id)));
         }
         return childrenDTO;
-    }
+        }
 
-    private Contest.model.Tuple<int,int> CreateAgeInterval(int age){
+        private Contest.model.Tuple<int,int> CreateAgeInterval(int age){
          IEnumerable<Challenge> challenges = challengeRepo.FindAll();
          foreach(Challenge challenge in challenges){
              if(challenge.MinimumAge <= age && challenge.MaximumAge >= age){
@@ -92,9 +92,9 @@ namespace Contest_CS.service
              }
          }
          return null;
-    }
+        }
 
-    public Child RegisterChild(String name,int age,String challenge1,String challenge2){
+        public Child RegisterChild(String name,int age,String challenge1,String challenge2){
 
         if(challenge1.CompareTo(challenge2) == 0){
             throw new ValidationException("Participantul nu poate fi inscris de 2 ori la aceeasi proba ! ");
@@ -156,15 +156,15 @@ namespace Contest_CS.service
 
         return added;
 
-    }
+        }
 
-    public Challenge getChallengeByProperties(int minimumAge, int maximumAge, string name)
-    {
+        public Challenge getChallengeByProperties(int minimumAge, int maximumAge, string name)
+        {
         return challengeRepo.FindByProperties(minimumAge, maximumAge, name);
-    }
+        }
 
-    public List<Child> getChildrenById(long cid)
-    {
+        public List<Child> getChildrenById(long cid)
+        {
         List<Child> children = new List<Child>();
         foreach (Entry entry in entriesRepo.FindAll())
         {
@@ -173,7 +173,7 @@ namespace Contest_CS.service
         }
 
         return children;
-    }
+        }
 
     }
 }

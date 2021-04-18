@@ -41,7 +41,7 @@ namespace Contest_CS
       
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new Login(service));
+      //Application.Run(new Login(service));
       
       
     }

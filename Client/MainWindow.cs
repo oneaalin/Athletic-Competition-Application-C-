@@ -5,10 +5,11 @@ using System.Linq;
 using System.Windows.Forms;
 using Client;
 using Models;
+using Networking;
 using Server;
 using Services;
 
-namespace Contest_CS
+namespace Client
 {
     public partial class Main : Form
     {
@@ -23,8 +24,53 @@ namespace Contest_CS
             ChildrenDataGridView.DataSource = ctrl.GetAllChildren();
             SecondChallengeBox.Visible = false;
             DeleteSecondChallengeLabel.Visible = false;
+            ctrl.updateEvent += userUpdate;
+        }
+        
+        private void ChatWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Console.WriteLine("ChatWindow closing "+e.CloseReason);
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                ctrl.Logout();
+                ctrl.updateEvent -= userUpdate;
+                Application.Exit();
+            }
+          
         }
 
+        public void userUpdate(object sender, UserEventArgs e)
+        {
+            if (e.UserEvent == UserEvent.NewChild)
+            {
+                UpdateDTO update = (UpdateDTO)e.Data;
+                ChildDTO child = update.Child;
+                List<ChallengeDTO> challenges = update.Challenges;
+                ChildrenDataGridView.BeginInvoke(new UpdateDelegate(this.UpdateChildren), new Object[] {update});
+                ChallengesDataGridView.BeginInvoke(new UpdateDelegate(this.UpdateChallenges), new Object[] {update});
+            }
+        }
+
+        public delegate void UpdateDelegate(UpdateDTO update);
+
+        private void UpdateChildren(UpdateDTO update)
+        {
+            ChildDTO child = update.Child;
+            List<ChildDTO> children = new List<ChildDTO>();
+            foreach(DataGridViewRow row in ChildrenDataGridView.Rows)
+                children.Add((ChildDTO) row.DataBoundItem);
+            children.Add(child);
+            //ChildrenDataGridView.Rows.Clear();
+            ChildrenDataGridView.DataSource = children;
+        }
+
+        private void UpdateChallenges(UpdateDTO update)
+        {
+            List<ChallengeDTO> challenges = update.Challenges;
+            //ChallengesDataGridView.Rows.Clear();
+            ChallengesDataGridView.DataSource = challenges;
+        }
+        
         private void AddSecondChallengeLabel_Click(object sender, EventArgs e)
         {
             SecondChallengeBox.Visible = true;
