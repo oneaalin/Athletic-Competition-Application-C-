@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Contest.model;
-using Contest_CS.service;
-using Contest_CS.validator;
+using Client;
+using Models;
+using Server;
+using Services;
 
 namespace Contest_CS
 {
     public partial class Main : Form
     {
         private Login loginForm;
-        private Service service;
-        private Employee employee;
-        public Main(Login loginForm ,Service service,Employee employee)
+        private ClientController ctrl;
+        public Main(Login loginForm ,ClientController ctrl)
         {
             this.loginForm = loginForm;
-            this.service = service;
-            this.employee = employee;
+            this.ctrl = ctrl;
             InitializeComponent();
-            ChallengesDataGridView.DataSource = service.GetAllChallenges();
-            ChildrenDataGridView.DataSource = service.GetAllChildren();
+            ChallengesDataGridView.DataSource = ctrl.GetAllChallenges();
+            ChildrenDataGridView.DataSource = ctrl.GetAllChildren();
             SecondChallengeBox.Visible = false;
             DeleteSecondChallengeLabel.Visible = false;
         }
@@ -53,7 +52,7 @@ namespace Contest_CS
             {
                 int age = Int32.Parse(ageText);
                 IDictionary<string, ChallengeDTO> challengesDictionary = new Dictionary<string, ChallengeDTO>();
-                List<ChallengeDTO> challenges = service.GetAllChallenges().ToList();
+                List<ChallengeDTO> challenges = ctrl.GetAllChallenges().ToList();
                 List<ChallengeDTO> filtered = new List<ChallengeDTO>();
                 foreach (ChallengeDTO challenge in challenges)
                 {
@@ -88,7 +87,7 @@ namespace Contest_CS
             {
                 int age = Int32.Parse(ageText);
                 IDictionary<string, ChallengeDTO> challengesDictionary = new Dictionary<string, ChallengeDTO>();
-                List<ChallengeDTO> challenges = service.GetAllChallenges().ToList();
+                List<ChallengeDTO> challenges = ctrl.GetAllChallenges().ToList();
                 List<ChallengeDTO> filtered = new List<ChallengeDTO>();
                 foreach (ChallengeDTO challenge in challenges)
                 {
@@ -127,7 +126,7 @@ namespace Contest_CS
                 challenge2 = SecondChallengeComboBox.SelectedItem.ToString();
             try
             {
-                Child child = service.RegisterChild(name, age, challenge1, challenge2);
+                Child child = ctrl.RegisterChild(name, age, challenge1, challenge2);
                 if (child != null)
                     ErrorLabel.Text = "A aparut o eroare ! ";
                 else
@@ -148,8 +147,8 @@ namespace Contest_CS
                 int maximumAge = Int32.Parse(ChallengesDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
                 string name = ChallengesDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
 
-                Challenge challenge = service.getChallengeByProperties(minimumAge, maximumAge, name);
-                ChallengeChildrenData childrenData = new ChallengeChildrenData(service.getChildrenById(challenge.Id));
+                Challenge challenge = ctrl.GetChallengeByProperties(minimumAge, maximumAge, name);
+                ChallengeChildrenData childrenData = new ChallengeChildrenData(ctrl.GetChildrenById(challenge.Id));
                 childrenData.Show();
             }
         }
